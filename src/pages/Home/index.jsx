@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import CartCountButton from '../../components/common/CartCountButton';
 import Footer from '../../components/common/Footer';
 import Menu from '../../components/common/Menu';
@@ -8,11 +8,17 @@ import './styles.css'
 
 
 const Home = () => {
+    const menuRef = useRef();
+
+    const handleScrollMenu = () => {
+        menuRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <div>
-            <Banner/>
-            <Menu list={menuItemsData}/>
-            <Footer/>
+            <Banner handleScrollMenu={handleScrollMenu} />
+            <Menu list={menuItemsData} ref={menuRef} />
+            <Footer />
             <CartCountButton></CartCountButton>
         </div>
     )
