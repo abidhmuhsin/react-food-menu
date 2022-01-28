@@ -16,7 +16,7 @@
 
 .btnCartCount .count {
     position: absolute;
-    background: red;
+    background: #ff6c6c;
     top: -8px;
     left: -9px;
     transform: rotate(-45deg);
